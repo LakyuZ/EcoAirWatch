@@ -1,0 +1,1078 @@
+/* CSS untuk animasi notifikasi */
+.animate-notification {
+    position: relative;
+    right: 15px;
+    bottom: 50px;
+    font-weight: bold;
+}
+
+.animate-notification .badge {
+    position: absolute;
+    top: 40px;
+    left: 50px;
+    background-color: red;
+    color: white;
+    border-radius: 50%;
+    padding: 5px 10px;
+    font-size: 16px;
+    animation: pulse 1s infinite;
+    width: 20px;
+    height: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1;
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.1);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
+/* Page Load */
+.loading-overlay {
+    position: fixed;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: rgba(0, 0, 0, 0.5); /* Latar belakang dengan transparansi */
+    z-index: 9999; /* Menempatkan di atas elemen lain */
+  }
+  
+  .loader {
+    border: 8px solid #f3f3f3;
+    border-top: 8px solid #3498db;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    animation: spin 2s linear infinite; /* Animasi putaran tak terbatas */
+    position: fixed;
+    top: 50%;
+    left: 47%;
+    transform: translate(-50%, -50%);
+  }
+  
+  @keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+  }
+  
+
+/* Gaya popup */
+#popupNotif {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    border-radius: 5px;
+    max-width: 300px;
+    text-align: center;
+    z-index: 999;
+}
+
+/* Gaya tombol tutup */
+#popupNotif button {
+    padding: 5px 10px;
+    background-color: #007BFF;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.scroll-to-top {
+    display: none;
+    position: fixed;
+    bottom: 20px;
+    left: 20px; /* Menggeser ke sebelah kiri */
+    cursor: pointer;
+    background-color: rgb(27, 165, 189);
+    color: white;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    text-align: center;
+    line-height: 40px;
+    z-index: 1;
+}
+
+body {
+    background: #09273A;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+.containerTitle {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+
+}
+
+.title {
+    position: relative;
+    font-size: x-large;
+    color: white;
+    text-align: center;
+    background: #0F4162;
+    border: none;
+    width: 100%;
+    height: 60px;
+    border-radius: 20px;
+    text-decoration: none;
+    display: flex;
+    /* Menggunakan flexbox */
+    justify-content: center;
+    /* Horisontal centering */
+    align-items: center;
+    /* Vertical centering */
+    font-weight: bold;
+    box-shadow:
+        inset 0 0 0 2px #dfa90d,
+        0.3em 0.3em 1em rgba(0, 0, 0, 0.3);
+    margin: 0 20px;
+    /* Tambahkan margin atas dan bawah 5px, tanpa margin sisi */
+}
+
+.containerStatus {
+    display: flex;
+    justify-content: space-between;
+    background-color: #0F4162;
+    border-radius: 20px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    position: relative;
+    margin: 0 20px;
+    padding: 40px;
+    border-bottom: 40px solid;
+    border-image: linear-gradient(90deg, rgba(211, 211, 211, 1) 0%, rgba(211, 211, 211, 1) 50%, rgba(162, 170, 173, 1) 100%)1;
+    box-shadow:
+        inset 0 0 0 2px #dfa90d,
+        0.3em 0.3em 1em rgba(0, 0, 0, 0.3);
+
+    overflow: visible;
+    /* Agar lapisan transparan tidak keluar dari container */
+}
+
+.textStatus {
+    position: absolute;
+    font-size: 20px;
+    top: 15%;
+    left: 20px;
+    transform: translateY(-50%);
+}
+
+.statusUdara {
+    position: relative;
+    font-size: 20px;
+    font-weight: bold;
+    bottom: 10px;
+}
+
+.iconStatus {
+    position: relative;
+    font-size: 20px;
+    top: 25px;
+    line-height: 1.2;
+    /* Sesuaikan dengan tinggi baris yang diinginkan */
+    margin-top: 20px;
+    /* Sesuaikan dengan margin yang diinginkan */
+    max-width: 100%;
+    /* Batasi lebar maksimum elemen */
+    overflow: hidden;
+    /* Menyembunyikan teks yang melewati batas kontainer */
+    text-overflow: ellipsis;
+    /* Menambahkan ellipsis (...) jika teks terlalu panjang */
+}
+
+.textNotif {
+    position: absolute;
+    font-size: 20px;
+    top: 15%;
+    left: 20px;
+    transform: translateY(-50%);
+}
+
+.notifikasi {
+    position: relative;
+    font-size: 20px;
+    top: 52px;
+    line-height: 1.2;
+    /* Sesuaikan dengan tinggi baris yang diinginkan */
+    margin-top: 20px;
+    /* Sesuaikan dengan margin yang diinginkan */
+    max-width: 100%;
+    /* Batasi lebar maksimum elemen */
+    overflow: hidden;
+    /* Menyembunyikan teks yang melewati batas kontainer */
+    text-overflow: ellipsis;
+    /* Menambahkan ellipsis (...) jika teks terlalu panjang */
+}
+
+.container {
+    display: flex;
+    justify-content: space-between;
+    background-color: #0F4162;
+    border-radius: 20px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    padding: 40px;
+    position: relative;
+    margin: 0 20px;
+    box-shadow:
+        inset 0 0 0 2px #dfa90d,
+        0.3em 0.3em 1em rgba(0, 0, 0, 0.3);
+    overflow: visible;
+    /* Agar lapisan transparan tidak keluar dari container */
+}
+
+/* Gaya untuk .chart-popup */
+.chart-popup {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1000;
+    /* Atur z-index lebih tinggi daripada elemen lain */
+    background-color: white;
+    padding: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    border-radius: 20px;
+}
+
+/* Gaya untuk canvas */
+.chartCanvas {
+    position: relative;
+    width: 800px;
+    /* Sesuaikan lebar sesuai kebutuhan Anda */
+    height: 300px;
+    z-index: 1;
+    /* Sesuaikan tinggi sesuai kebutuhan Anda */
+    display: block;
+    margin: 0 auto;
+}
+
+/* Gaya untuk .box */
+.box {
+    width: 70%;
+    height: 180px;
+    text-align: center;
+    line-height: 100px;
+    color: #fff;
+    font-size: 18px;
+    border-radius: 20px;
+    margin: 0 10px;
+    position: relative;
+    overflow: visible;
+    /* Letakkan konten di atas lapisan transparan */
+}
+
+.box::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(252, 240, 203, 0.4);
+    /* Letakkan lapisan di belakang konten box */
+    border-radius: 20px;
+    /* Sesuaikan dengan radius box */
+    overflow: visible;
+}
+
+/* Gaya untuk .box */
+.box2 {
+    width: 50%;
+    height: 180px;
+    text-align: center;
+    line-height: 100px;
+    color: #fff;
+    font-size: 18px;
+    border-radius: 20px;
+    margin: 0 10px;
+    position: relative;
+    overflow: visible;
+    /* Letakkan konten di atas lapisan transparan */
+}
+
+.box2::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(252, 240, 203, 0.4);
+    /* Letakkan lapisan di belakang konten box */
+    border-radius: 20px;
+    /* Sesuaikan dengan radius box */
+    overflow: visible;
+}
+
+.bar {
+    position: absolute;
+    width: 4px;
+    /* Lebar bar vertikal */
+    height: 60%;
+    /* Tinggi bar vertikal (80% dari tinggi kotak) */
+    background-color: #6d6d6d;
+    top: 30%;
+    /* Posisi bar vertikal dari atas (10% dari tinggi kotak) */
+    left: 50%;
+    z-index: 1;
+    /* Posisi bar vertikal dari tengah (50% dari lebar kotak) */
+    transform: translateX(-50%);
+    /* Agar bar vertikal berada di tengah kotak */
+}
+
+.left {
+    position: absolute;
+    font-size: 25px;
+    top: 15%;
+    left: 20px;
+    z-index: 1;
+    transform: translateY(-50%);
+}
+
+
+
+.leftEdge {
+    position: absolute;
+    font-size: 25px;
+    top: 20%;
+    right: 10px;
+    z-index: 1;
+    transform: translateY(-50%);
+}
+
+.bottomLeftUp {
+    position: absolute;
+    font-size: 15px;
+    top: 50%;
+    left: 20px;
+    z-index: 1;
+    transform: translateY(-50%);
+}
+
+.separator {
+    display: block;
+    z-index: 1;
+    margin-top: -40px;
+    /* Sesuaikan dengan spasi yang Anda inginkan */
+    margin-bottom: -40px;
+    border-bottom: 1px dashed #ffffff;
+    /* Atur gaya separator sesuai kebutuhan */
+}
+
+
+.bottomLeftDown {
+    position: absolute;
+    font-size: 15px;
+    top: 95%;
+    left: 10px;
+    z-index: 1;
+    transform: translateY(-50%);
+}
+
+.right {
+    position: absolute;
+    font-size: 35px;
+    top: 60%;
+    right: 40px;
+    z-index: 1;
+    transform: translateY(-50%);
+}
+
+.containerDown {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.boxDown {
+    position: relative;
+    font-size: x-large;
+    color: white;
+    text-align: center;
+    background: #0F4162;
+    border: none;
+    width: 100%;
+    height: 60px;
+    border-radius: 20px;
+    text-decoration: none;
+    display: flex;
+    /* Menggunakan flexbox */
+    justify-content: center;
+    /* Horisontal centering */
+    align-items: center;
+    /* Vertical centering */
+    font-weight: bold;
+    box-shadow:
+        inset 0 0 0 2px #dfa90d,
+        0.3em 0.3em 1em rgba(0, 0, 0, 0.3);
+    margin: 0 20px;
+    /* Tambahkan margin atas dan bawah 5px, tanpa margin sisi */
+}
+
+.imgInfo {
+    position: relative;
+    right: 10px;
+    top: 2px;
+}
+
+
+/* CSS untuk tombol "Back" */
+.back-button {
+    cursor: pointer;
+    display: inline-block;
+    position: absolute;
+    top: 46px;
+    /* Menentukan jarak dari atas */
+    left: 30px;
+    /* Menentukan jarak dari kiri */
+
+}
+
+.noteFooter {
+    display: inline-block;
+    left: 20px;
+}
+
+footer {
+    position: relative;
+    bottom: 0;
+    width: 100%;
+    color: white;
+    text-align: center;
+    font-family: Arial, sans-serif; /* Contoh menggunakan font Arial */
+    font-size: 15px;
+    padding: 10px 0;
+  }
+
+.iconDownload {
+    position: relative;
+    cursor: pointer;
+    left: 46%;
+    margin: 4px;
+}
+
+@media screen and (max-width: 960px) {
+    body {
+        background: #09273A;
+        margin: 0;
+        padding: 0;
+    }
+
+    .container {
+        flex-direction: column;
+        /* Menjadikan box sejajar secara vertikal */
+    }
+
+    .labelKadar {
+        font-size: 22px;
+        font-weight: bold;
+    }
+
+    /* Gaya untuk canvas */
+    .chartCanvas {
+        position: relative;
+        width: 800px;
+        /* Sesuaikan lebar sesuai kebutuhan Anda */
+        height: 300px;
+        z-index: 1;
+        /* Sesuaikan tinggi sesuai kebutuhan Anda */
+        display: block;
+        margin: 0 auto;
+    }
+
+    
+    .textAllGrafik {
+        position: relative;
+        font-size: 12px;
+        bottom: 9px;
+        right: 5px;
+        margin-top: 20px;
+        /* Sesuaikan dengan margin yang diinginkan */
+        max-width: 100%;
+        /* Batasi lebar maksimum elemen */
+        overflow: hidden;
+        /* Menyembunyikan teks yang melewati batas kontainer */
+        text-overflow: ellipsis;
+        /* Menambahkan ellipsis (...) jika teks terlalu panjang */
+    }
+
+    .textInformasi {
+        position: relative;
+        font-size: 16px;
+        bottom: 9px;
+        right: 5px;
+        margin-top: 20px;
+        /* Sesuaikan dengan margin yang diinginkan */
+        max-width: 100%;
+        /* Batasi lebar maksimum elemen */
+        overflow: hidden;
+        /* Menyembunyikan teks yang melewati batas kontainer */
+        text-overflow: ellipsis;
+        /* Menambahkan ellipsis (...) jika teks terlalu panjang */
+    }
+
+    /* Gaya untuk canvas */
+    .chartCanvas {
+        position: relative;
+        width: 800px;
+        /* Sesuaikan lebar sesuai kebutuhan Anda */
+        height: 300px;
+        z-index: 1;
+        /* Sesuaikan tinggi sesuai kebutuhan Anda */
+        display: block;
+        margin: 0 auto;
+    }
+
+    .box {
+        width: 100%;
+        /* Ukuran box 100% dari lebar container */
+        margin: 0 0 40px 0;
+        /* Ruang antara box, hanya bagian bawahnya */
+    }
+
+    .left {
+        font-size: 30px;
+        /* Atur font-size yang berbeda untuk mode breakpoint */
+        top: -15px;
+        /* Atur posisi yang berbeda untuk mode breakpoint */
+        bottom: 100px;
+        /* Atur posisi yang berbeda untuk mode breakpoint */
+        left: 20px;
+        /* Atur posisi yang berbeda untuk mode breakpoint */
+        transform: translateY(0);
+        /* Reset transform untuk mode breakpoint */
+    }
+
+    .leftEdge {
+        font-size: 25px;
+        top: 25%;
+        right: 20px;
+        transform: translateY(-50%);
+    }
+
+    .right {
+        font-size: 40px;
+        /* Atur font-size yang berbeda untuk mode breakpoint */
+        top: 65px;
+        /* Atur posisi yang berbeda untuk mode breakpoint */
+        right: 50px;
+        /* Atur posisi yang berbeda untuk mode breakpoint */
+        transform: translateY(0);
+        /* Reset transform untuk mode breakpoint */
+    }
+
+    .bottomLeftUp {
+        font-size: 15px;
+        top: 55%;
+        left: 20px;
+        transform: translateY(-50%);
+    }
+
+    .separator {
+        display: block;
+        margin-top: -40px;
+        /* Sesuaikan dengan spasi yang Anda inginkan */
+        margin-bottom: -40px;
+        border-bottom: 1px dashed #ffffff;
+        /* Atur gaya separator sesuai kebutuhan */
+    }
+
+    .bottomLeftDown {
+        font-size: 15px;
+        top: 95%;
+        left: 10px;
+        transform: translateY(-50%);
+    }
+
+    .bar {
+        width: 4px;
+        /* Lebar bar vertikal */
+        height: 55%;
+        /* Tinggi bar vertikal (80% dari tinggi kotak) */
+        background-color: #6d6d6d;
+        top: 40%;
+        /* Posisi bar vertikal dari atas (10% dari tinggi kotak) */
+        left: 50%;
+        /* Posisi bar vertikal dari tengah (50% dari lebar kotak) */
+        transform: translateX(-50%);
+        /* Agar bar vertikal berada di tengah kotak */
+    }
+
+    footer {
+        font-size: 11px;
+      }
+
+}
+
+
+/* Breakpoint: Untuk perangkat dengan lebar layar maksimum 768px */
+@media screen and (max-width: 768px) {
+
+    body {
+        background: #09273A;
+        margin: 0;
+        padding: 0;
+    }
+
+    .container {
+        flex-direction: column;
+        /* Menjadikan box sejajar secara vertikal */
+    }
+
+    .loader {
+        position: fixed;
+        top: 50%;
+        left: 40%;
+        transform: translate(-50%, -50%);
+      }
+
+    .containerTitle {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+
+    }
+
+    .title {
+        position: relative;
+        font-size: 18px;
+        color: white;
+        text-align: center;
+        background: #0F4162;
+        border: none;
+        width: 100%;
+        height: 60px;
+        border-radius: 20px;
+        text-decoration: none;
+        display: flex;
+        /* Menggunakan flexbox */
+        justify-content: center;
+        /* Horisontal centering */
+        align-items: center;
+        /* Vertical centering */
+        font-weight: bold;
+        box-shadow:
+            inset 0 0 0 2px #dfa90d,
+            0.3em 0.3em 1em rgba(0, 0, 0, 0.3);
+        margin: 0 20px;
+        /* Tambahkan margin atas dan bawah 5px, tanpa margin sisi */
+    }
+
+    .textStatus {
+        font-size: 15px;
+        font-weight: bold;
+        left: 27px;
+    }
+
+    .statusUdara {
+        font-size: 15px;
+        font-weight: bold;
+        bottom: 5px;
+    }
+
+    .textNotif {
+        font-size: 15px;
+        font-weight: bold;
+        left: 7px;
+    }
+
+    .labelKadar {
+        font-size: 22px;
+        font-weight: bold;
+    }
+
+    /* Gaya untuk canvas */
+    .chartCanvas {
+        position: relative;
+        width: 800px;
+        /* Sesuaikan lebar sesuai kebutuhan Anda */
+        height: 300px;
+        z-index: 1;
+        /* Sesuaikan tinggi sesuai kebutuhan Anda */
+        display: block;
+        margin: 0 auto;
+    }
+
+    .textAllGrafik {
+        position: relative;
+        font-size: 12px;
+        bottom: 9px;
+        right: 5px;
+        margin-top: 20px;
+        /* Sesuaikan dengan margin yang diinginkan */
+        max-width: 100%;
+        /* Batasi lebar maksimum elemen */
+        overflow: hidden;
+        /* Menyembunyikan teks yang melewati batas kontainer */
+        text-overflow: ellipsis;
+        /* Menambahkan ellipsis (...) jika teks terlalu panjang */
+    }
+
+    .textInformasi {
+        position: relative;
+        font-size: 16px;
+        bottom: 9px;
+        right: 5px;
+        margin-top: 20px;
+        /* Sesuaikan dengan margin yang diinginkan */
+        max-width: 100%;
+        /* Batasi lebar maksimum elemen */
+        overflow: hidden;
+        /* Menyembunyikan teks yang melewati batas kontainer */
+        text-overflow: ellipsis;
+        /* Menambahkan ellipsis (...) jika teks terlalu panjang */
+    }
+
+
+    /* Gaya untuk canvas */
+    .chartCanvas {
+        position: relative;
+        width: 350px;
+        /* Sesuaikan lebar sesuai kebutuhan Anda */
+        height: 160px;
+        z-index: 1000;
+        /* Sesuaikan tinggi sesuai kebutuhan Anda */
+        display: block;
+        margin: 0 auto;
+    }
+
+    .box {
+        width: 100%;
+        /* Ukuran box 100% dari lebar container */
+        margin: 0 0 40px 0;
+        /* Ruang antara box, hanya bagian bawahnya */
+    }
+
+    .left {
+        font-size: 30px;
+        /* Atur font-size yang berbeda untuk mode breakpoint */
+        top: -15px;
+        /* Atur posisi yang berbeda untuk mode breakpoint */
+        bottom: 100px;
+        /* Atur posisi yang berbeda untuk mode breakpoint */
+        left: 20px;
+        /* Atur posisi yang berbeda untuk mode breakpoint */
+        transform: translateY(0);
+        /* Reset transform untuk mode breakpoint */
+    }
+
+    .leftEdge {
+        font-size: 25px;
+        top: 25%;
+        right: 20px;
+        transform: translateY(-50%);
+    }
+
+    .right {
+        font-size: 40px;
+        /* Atur font-size yang berbeda untuk mode breakpoint */
+        top: 65px;
+        /* Atur posisi yang berbeda untuk mode breakpoint */
+        right: 50px;
+        /* Atur posisi yang berbeda untuk mode breakpoint */
+        transform: translateY(0);
+        /* Reset transform untuk mode breakpoint */
+    }
+
+    .bottomLeftUp {
+        font-size: 15px;
+        top: 55%;
+        left: 20px;
+        transform: translateY(-50%);
+    }
+
+    .separator {
+        display: block;
+        margin-top: -40px;
+        /* Sesuaikan dengan spasi yang Anda inginkan */
+        margin-bottom: -40px;
+        border-bottom: 1px dashed #ffffff;
+        /* Atur gaya separator sesuai kebutuhan */
+    }
+
+    .bottomLeftDown {
+        font-size: 15px;
+        top: 95%;
+        left: 10px;
+        transform: translateY(-50%);
+    }
+
+    .bar {
+        width: 4px;
+        /* Lebar bar vertikal */
+        height: 55%;
+        /* Tinggi bar vertikal (80% dari tinggi kotak) */
+        background-color: #6d6d6d;
+        top: 40%;
+        /* Posisi bar vertikal dari atas (10% dari tinggi kotak) */
+        left: 50%;
+        /* Posisi bar vertikal dari tengah (50% dari lebar kotak) */
+        transform: translateX(-50%);
+        /* Agar bar vertikal berada di tengah kotak */
+    }
+
+    footer {
+        font-size: 11px;
+      }
+}
+
+
+
+/* CSS untuk Page Notifikasi */
+
+/* Tampilan default */
+.container-table {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.report-table {
+    width: 100%;
+    background-color: #FFFFFF;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    overflow-x: auto;
+    /* Menambahkan scroll horizontal saat perlu */
+}
+
+.report-table table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.report-table th,
+.report-table td {
+    padding: 10px;
+    text-align: center;
+    border-bottom: 1px solid #E0E0E0;
+}
+
+.report-table th {
+    background-color: #009879;
+    /* Warna header biru */
+    color: #FFFFFF;
+}
+
+.report-table td {
+    color: #333333;
+}
+
+.report-table tbody tr:hover {
+    background-color: #E3F2FD;
+    /* Warna latar belakang saat dihover */
+    cursor: pointer;
+}
+
+.report-table tbody tr:nth-of-type(even) {
+    background-color: #f3f3f3;
+}
+
+.report-table tbody tr:last-of-type {
+    border-bottom: 2px solid #009879;
+}
+
+.report-table tbody tr.active-row {
+    font-weight: bold;
+    color: #009879;
+}
+
+
+
+/* CSS untuk Page ALL CHART */
+
+.chart-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.card1 {
+    background-color: #ccc;
+    width: 100%;
+    max-width: 552px;
+    margin-bottom: 20px;
+    padding: 10px;
+    border: 4px solid #dfa90d;
+}
+
+        /* CSS untuk tampilan web desktop */
+        @media (min-width: 768px) {
+            .card1 {
+                width: 48%; /* Mengatur lebar kartu agar dua kartu dapat berdampingan */
+                margin-right: 20px;
+            }
+
+            .chart-container {
+                padding: 20px 40px;
+            }
+        }
+
+
+/* CSS untuk Page Informasi */
+
+.chart-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.cardInfo {
+    background-color: #ccc;
+    width: 100%;
+    max-width: 552px;
+    margin-bottom: 20px;
+    padding: 10px;
+    border: 4px solid #dfa90d;
+    border-radius: 20px;
+}
+
+.boxLevel1 {
+    position: relative;
+    font-size: x-large;
+    color: rgb(0, 0, 0);
+    background: #f9fafa;
+    border: none;
+    width: 10%;
+    height: 100px;
+    border-radius: 20px;
+    display: flex;
+}
+
+.textRataLeft {
+    font-size: 14px;
+    text-align: justify;
+    color: rgb(0, 0, 0);
+    border: none;
+    width: 100%;
+    top: 10px;
+    line-height: 1.5;
+}
+
+.textBold {
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.textCenter {
+    text-align: center;
+    font-size: 17px;
+    font-weight: bold;
+}
+
+.popup {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #f1f1f1;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    z-index: 1;
+}
+
+.popup h3 {
+    margin-top: 0;
+}
+
+.popup p {
+    margin-bottom: 0;
+}
+
+.popup .tutup {
+    position: relative;
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    bottom: 8px;
+}
+
+.popup .tutup:hover,
+.popup .tutup:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+/* CSS untuk tampilan web desktop */
+@media (min-width: 768px) {
+    .cardInfo {
+        width: 48%;
+        /* Mengatur lebar kartu agar dua kartu dapat berdampingan */
+        margin-right: 20px;
+    }
+
+    .judul {
+        font-size: 24px;
+    }
+
+    .chart-container {
+        padding: 20px 40px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .popup {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #f1f1f1;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    z-index: 1;
+    width: 300px; /* Ukuran lebar popup */
+    max-width: 80%; /* Lebar maksimum yang diizinkan */
+}
+
+.judulCenter {
+    font-family: Arial, sans-serif;
+    font-size: x-large;
+    color: rgb(255, 0, 0);
+    /* Mengganti warna teks menjadi putih */
+    position: absolute;
+    top: 10px;
+    /* Menempatkan teks di atas container */
+    left: 50%;
+    /* Menengahkan secara horizontal */
+    transform: translateX(-50%);
+    /* Menengahkan secara horizontal */
+}
+
+}
+
+

@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sistem Web EcoAir</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="manifest" href="manifest.json">
+    <link rel="shortcut icon" href="assets/images/favicon.ico" type="image/x-icon">
+
+    <style></style>
+</head>
+
+<body>
+
+    <div class="scroll-to-top" id="scrollToTop">&uarr;</div>
+        <div class="loading-overlay">
+        <div class="loader"></div>
+    </div>
+
+    <br>
+    <br>
+    <div class="containerTitle">
+        <div class="title">EcoAir | Monitoring kualitas udara</div>
+    </div>
+    <br>
+    <br>
+
+    <div>
+        <div class="containerStatus">
+            <div class="box">
+                <div>
+                    <span class="textStatus">Status Udara</span>
+                    <div class="iconStatus">
+                        <img width="80" height="80"  id="statusIconImg" src="" />
+                    </div>
+                    <div class="statusUdara" id="statusUdara">Loading...</div>
+                </div>
+            </div>
+            &nbsp;&nbsp;
+            <div class="box2">
+                <div>
+                    <span class="textNotif">Notifikasi</span>
+                    <span id="notifikasi"></span>
+                    <span class="notifikasi" onclick="linkToNotifikasi();" style="cursor: pointer;">
+                    <img  width="80" height="80" src="assets/images/mail.png"
+                            alt="new-post--v1" />
+                    </span>
+                </div>
+            </div>
+        </div>
+        <br>
+        <br>
+
+        <div id="popupNotif">
+            <h2>Kualitas udara dalam keadaan Bahaya</h2>
+            <div class="" id="timePm"></div>
+            <p>Cepat Gunakan Masker atau Pindah dari Area Tersebut</p>
+            <button onclick="tutupPopup()">Tutup</button>
+        </div>
+
+        <div class="container">
+
+            <div class="box">
+                <div class="left"><span class="labelKadar">PM2.5</span></div>
+                <div class="leftEdge">
+                    <img width="40" height="40" src="assets/images/dust.png" alt="dust" />
+                </div>
+                <div class="bottomLeftUp" id="timePm25">Time</div>
+                <div class="bottomLeftDown">
+                    <img width="50" height="50" src="assets/images/chart.png"
+                        alt="combo-chart" onclick="showChartPopup('chartPopup1')" style="cursor: pointer;" />
+                </div>
+
+                <!-- Di dalam div pop-up chart -->
+                <div id="chartPopup1" class="chart-popup" style="box-sizing: border-box;">
+                    <!-- Tambahkan canvas untuk grafik Chart.js -->
+                    <canvas class="chartCanvas"></canvas>
+                    <!-- Tambahkan tombol tutup jika diperlukan -->
+                    <button onclick="closeChartPopup('chartPopup1')">Tutup</button>
+                </div>
+                <div class="bar"></div>
+                <div class="right" id="valuePm25">1</div>
+            </div>
+
+            <div class="box">
+                <div class="left"><span class="labelKadar">CO</span></div>
+                <div class="leftEdge">
+                    <img width="40" height="40" src="assets/images/carbon.png" alt="carbon" />
+                </div>
+                <div class="bottomLeftUp" id="timeCo">Time</div>
+                <div class="bottomLeftDown">
+                    <img width="50" height="50" src="assets/images/chart.png"
+                        alt="combo-chart" onclick="showChartPopup3('chartPopup3')" style="cursor: pointer;" />
+                </div>
+
+                <!-- Di dalam div pop-up chart -->
+                <div id="chartPopup3" class="chart-popup" style="box-sizing: border-box;">
+                    <!-- Tambahkan canvas untuk grafik Chart.js -->
+                    <canvas class="chartCanvas"></canvas>
+                    <!-- Tambahkan tombol tutup jika diperlukan -->
+                    <button onclick="closeChartPopup3('chartPopup3')">Tutup</button>
+                </div>
+                <div class="bar"></div>
+                <div class="right" id="valueCo">3</div>
+            </div>
+
+            <div class="box">
+                <div class="left"><span class="labelKadar">Suhu</span></div>
+                <div class="leftEdge">
+                    <img width="40" height="40" src="assets/images/temperature.png"
+                        alt="temperature--v1" />
+                </div>
+                <div class="bottomLeftUp" id="timeSuhu">Time</div>
+                <div class="bottomLeftDown">
+                    <img width="50" height="50" src="assets/images/chart.png"
+                        alt="combo-chart" onclick="showChartPopup4('chartPopup4')" style="cursor: pointer;" />
+                </div>
+
+                <!-- Di dalam div pop-up chart -->
+                <div id="chartPopup4" class="chart-popup" style="box-sizing: border-box;">
+                    <!-- Tambahkan canvas untuk grafik Chart.js -->
+                    <canvas class="chartCanvas" width="500" height="300"></canvas>
+                    <!-- Tambahkan tombol tutup jika diperlukan -->
+                    <button onclick="closeChartPopup4('chartPopup4')">Tutup</button>
+                </div>
+                <div class="bar"></div>
+                <div class="right" id="valueSuhu">4</div>
+            </div>
+
+            <div class="box">
+                <div class="left"><span class="labelKadar">Kelembaban</span></div>
+                <div class="leftEdge">
+                    <img width="40" height="40" src="assets/images/dew-point.png" alt="dew-point" />
+                </div>
+                <div class="bottomLeftUp" id="timeKelembaban">Time</div>
+                <div class="bottomLeftDown">
+                    <img width="50" height="50" src="assets/images/chart.png"
+                        alt="combo-chart" onclick="showChartPopup5('chartPopup5')" style="cursor: pointer;" />
+                </div>
+
+                <!-- Di dalam div pop-up chart -->
+                <div id="chartPopup5" class="chart-popup" style="box-sizing: border-box;">
+                    <!-- Tambahkan canvas untuk grafik Chart.js -->
+                    <canvas class="chartCanvas"></canvas>
+                    <!-- Tambahkan tombol tutup jika diperlukan -->
+                    <button onclick="closeChartPopup5('chartPopup5')">Tutup</button>
+                </div>
+                <div class="bar"></div>
+                <div class="right" id="valueKelembaban">5</div>
+            </div>
+        </div>
+        <br>
+        <br>
+
+        <div class="containerDown">
+            <div class="boxDown" onclick="linkToAllChart();" style="cursor: pointer;">
+                &nbsp;
+                <img width="40" height="40" src="assets/images/chart.png" alt="all-chart">
+                &nbsp;
+                <span class="textAllGrafik">Grafik semua chart dalam 24 jam</span>
+            </div>
+
+            <div class="boxDown" onclick="linkToInformasi();" style="cursor: pointer;">
+                <diV class="imgInfo">
+                    <img width="40" height="40" src="assets/images/info.png" alt="info" />
+                </diV>
+                <span class="textInformasi">informasi</span>
+            </div>
+        </div> 
+        <br>
+        <br>
+          
+        <footer>
+            <div class="noteFooter">
+                <span>
+                    Jika anda belum menginstall app ini pada device anda, silahkan klik tombol panah kebawah  
+                  </span>
+                <span>
+                    <img id="btnInstall" class="iconDownload" width="25" height="25" src="assets/images/download.png"/>
+                </span>
+                <span>jika sudah abaikan</span>
+            </div>
+            <br>
+            <p> Copyright &copy; 2023 Zaki Fachreji</p>
+          </footer>
+
+        <script>
+            
+        </script>
+
+        <script>
+            function linkToNotifikasi() {
+                window.location.href = "notifikasi.html";
+            }
+            function linkToAllChart() {
+                window.location.href = "allChart.html";
+            }
+
+            function linkToInformasi() {
+                window.location.href = "informasi.html";
+            }
+        </script>
+
+        <script src="assets/js/chartPm.js"></script>
+        <script src="assets/js/chartPm10.js"></script>
+        <script src="assets/js/chartCo.js"></script>
+        <script src="assets/js/chartSuhu.js"></script>
+        <script src="assets/js/chartKelembaban.js"></script>
+        <script src="assets/js/notifikasiPopup.js"></script>
+        <script src="assets/js/scrollUp.js"></script>
+
+        <script src="service-worker.js"></script>
+        <script src="assets/js/register.js"></script>
+        
+
+</body>
+
+</html>

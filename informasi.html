@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>informasi</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="shortcut icon" href="assets/images/favicon.ico" type="image/x-icon">
+    <style></style>
+</head>
+
+<body>
+    <br>
+    <br>
+    <div class="containerTitle">
+        <div class="title">Informasi</div>
+    </div>
+    <br>
+    <br>
+    <br>
+    <!-- Tombol "Back" untuk kembali ke index.html -->
+    <a href="index.html" class="back-button">
+        <img width="40" height="40" src="assets/images/back.png" alt="back--v1" />
+    </a>
+
+    <div class="scroll-to-top" id="scrollToTop">&uarr;</div>
+    <div class="loading-overlay">
+        <div class="loader"></div>
+    </div>
+
+    <div class="chart-container">
+        <div class="cardInfo">
+            <div class="boxColor"></div>
+            <div class="textCenter">Penentuan Status Kualitas Udara</div> <br>
+            <div class="textRataLeft">
+                Untuk menentukan kualitas udara indikator yang pilih pada sistem monitoring
+                kualitas udara ini adalah jumlah dari kadar PM2.5 yang sedang berlangsung.
+            </div>
+        </div>
+
+        <div class="cardInfo">
+            <div class="boxColor"></div>
+            <div class="textCenter"> <span>BAIK (0 - 75)</span> </div>
+            <br>
+            <div class="textRataLeft">
+                Tingkat kualitas udara sangat baik, tidak memberikan efek negatif terhadap manusia, hewan, dan tumbuhan.
+            </div>
+        </div>
+
+        <div class="cardInfo">
+            <div class="boxColor"></div>
+            <div class="textCenter"> <span class="textTengah">SEDANG (76 - 115)</span> </div> <br>
+            <div class="textRataLeft">
+                Tingkat kualitas udara masih dapat diterima pada kesehatan manusia, hewan, dan tumbuhan.
+            </div>
+        </div>
+
+        <div class="cardInfo">
+            <div class="boxColor"></div>
+            <div class="textCenter"> <span>TIDAK SEHAT (116 - 150)</span> </div> <br>
+            <div class="textRataLeft">
+                Tingkat kualitas udara yang bersifat merugikan pada manusia, hewan, dan tumbuhan.
+            </div>
+        </div>
+
+        <div class="cardInfo">
+            <div class="boxColor"></div>
+            <div class="textCenter"> <span>SANGAT TIDAK SEHAT (151 - 250)</span> </div> <br>
+            <div class="textRataLeft">
+                Tingkat kualitas udara yang dapat meningkatkan resiko kesehatan pada sejumlah segmen populas yang
+                terpapar.
+            </div>
+        </div>
+
+        <div class="cardInfo">
+            <div class="boxColor"></div>
+            <div class="textCenter"> <span>BERBAHAYA (> 250)</span> </div> <br>
+            <div class="textRataLeft">
+                Tingkat kualitas udara yang dapat merugikan kesehatan serius pada populasi dan perlu pengamanan cepat.
+            </div>
+        </div>
+
+        <div class="cardInfo">
+            <div class="boxColor"></div>
+            <div class="textCenter"> <span>Penjelasan Elemen Elemen</span> </div> <br>
+            <div class="textRataLeft">
+
+                <span id="teksPopup" class="textBold" style="cursor: pointer;">> Eco Air Watch</span>
+                <div id="popup" class="popup">
+                    <span class="tutup" onclick="tutupPopup()">&times;</span>
+                    <h3 class="textCenter">Penjelasan</h3>
+                    <p class="textRataLeft">
+                        <span class="textBold">Eco Air Watch</span>
+                       adalah sistem web monitoring kualitas udara berbasis IoT realtime. Tujuan utama dalam pembuatannya sistem ini
+                       untuk membantu khususnya penghuni kampus FTI yang suka nongkrong di area depan perpustakan FTI agar lebih peduli
+                       terhadap bahaya mengirup polusi udara tercemar terkhusus asap rokok dan vape bagi kesehatan tubuh. Fungsi utama penggunaan 
+                       sistem ini adalah memantau keadaan kualitas udara secara realtime dan jika tingkat polusinya sudah diambang batas
+                       aman akan ada peringatan notifikasi pop-up pada tampilan sistem monoritoring ini agar segera menggunakan masker atau
+                       segeran pindah dari tempat depan perpustakan FTI.
+                    </p>
+                </div>
+                <br><br>
+
+
+                <span id="teksPopup1" class="textBold" style="cursor: pointer;">> PM2.5</span>
+                <div id="popup1" class="popup">
+                    <span class="tutup" onclick="tutupPopup1()">&times;</span>
+                    <h3 class="textCenter">Penjelasan</h3>
+                    <p class="textRataLeft">
+                        <span class="textBold">PM2.5</span>
+                        adalah singkatan dari Particulate Matter 2.5, yang mengacu
+                        pada partikel-partikel kecil dalam udara yang memiliki diameter kurang dari 2.5 mikrometer.
+                        Partikelini berasal dari berbagai sumber, termasuk asap rokok, asap kendaraan bermotor, industri,
+                        pembakaran bahan bakarfosil, proses industri, debu, dan aktivitas alamiah seperti erupsi gunung 
+                        berapi atau debu dari tanah.
+                    </p>
+                </div>
+                <br><br>
+
+                <span id="teksPopup2" class="textBold" style="cursor: pointer;">> CO</span>
+                <div id="popup2" class="popup">
+                    <span class="tutup" onclick="tutupPopup2()">&times;</span>
+                    <h3 class="textCenter">Penjelasan</h3>
+                    <p class="textRataLeft">
+                        <span class="textBold">CO</span>
+                        merupakan singkatan dari karbon monoksida. Karbon monoksida adalah gas
+                        beracun yang tidak berwarna, tidak berbau, dan tidak terlihat yang dihasilkan dari proses
+                        pembakaran bahan bakar
+                        yang tidak sempurna, seperti pembakaran kendaraan bermotor, pembakaran kayu, gas, minyak, atau
+                        batu bara.
+                    </p>
+                </div>
+                <br><br>
+
+                <span id="teksPopup3" class="textBold" style="cursor: pointer;">> Suhu</span>
+                <div id="popup3" class="popup">
+                    <span class="tutup" onclick="tutupPopup3()">&times;</span>
+                    <h3 class="textCenter">Penjelasan</h3>
+                    <p class="textRataLeft">
+                        <span class="textBold">Suhu Udara</span>
+                        adalah salah satu parameter penting dalam menilai kualitas
+                        udara dan lingkungan secara umum. Suhu udara mengacu pada tingkat panas atau dinginnya udara di
+                        suatu
+                        lokasi pada suatu waktu tertentu. Pengukuran suhu udara merupakan bagian penting dari pengamatan
+                        cuaca dan lingkungan.
+                    </p>
+                </div>
+                <br><br>
+
+                <span id="teksPopup4" class="textBold" style="cursor: pointer;">> Kelembaban</span>
+                <div id="popup4" class="popup">
+                    <span class="tutup" onclick="tutupPopup4()">&times;</span>
+                    <h3 class="textCenter">Penjelasan</h3>
+                    <p class="textRataLeft">
+                        <span class="textBold">Kelembaban udara</span>
+                        adalah ukuran seberapa banyak uap air yang ada di udara pada suatu lokasi dan waktu tertentu.
+                        Konsep kelembaban sangat penting dalam menilai kualitas udara karena mempengaruhi
+                        kenyamanan manusia, pertumbuhan organisme, dan berbagai proses alami di lingkungan.
+                    </p>
+                </div>
+                <br><br>
+
+
+                <span id="teksPopup5" class="textBold" style="cursor: pointer;">> Notifikasi</span>
+                <div id="popup5" class="popup">
+                    <span class="tutup" onclick="tutupPopup5()">&times;</span>
+                    <h3 class="textCenter">Penjelasan</h3>
+                    <p class="textRataLeft">
+                        <span class="textBold">Notifikasi</span>
+                        adalah pemberitahuan kepada pengguna melalui notifikasi popup pada saat pengguna berapa di dalam
+                        sistem monoritoring kualitas udara bahwa status kualitas udara pada area depan perpustakan FTI
+                        UNSAP dalam keadaaan tidak sehat atau lebih.
+                    </p>
+                </div>
+                <br><br>
+
+                <span id="teksPopup6" class="textBold" style="cursor: pointer;">> Grafik Chart</span>
+                <div id="popup6" class="popup">
+                    <span class="tutup" onclick="tutupPopup6()">&times;</span>
+                    <h3 class="textCenter">Penjelasan</h3>
+                    <p class="textRataLeft">
+                        <span class="textBold">Grafik Chart</span>
+                        adalah representasi visual dari data dalam bentuk chart yang dikumpulkan dari sensor-sensor
+                        yang terpasang untuk memantau kualitas udara secara realtime. Pada Grafik chart menampilkan
+                        berbagai parameter terkait udara, seperti tingkat polutan PM2.5, karbon monoksida (CO), Suhu
+                        udara,
+                        dan temperatur udara.
+                    </p>
+                </div>
+                <br><br>
+
+            </div>
+        </div>
+
+    </div>
+
+    <footer>
+        <p> Copyright &copy; 2023 Zaki Fachreji</p>
+      </footer>
+
+    <script src="assets/js/scrollUp.js"></script>
+    <script src="assets/js/informasi.js"></script>
+</body>
+
+</html>
