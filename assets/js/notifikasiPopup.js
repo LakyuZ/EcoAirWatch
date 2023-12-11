@@ -3,7 +3,7 @@
 function updateNotificationCount() {
     // Membuat permintaan HTTP untuk mengambil data dari REST API
     var xhr = new XMLHttpRequest();
-    xhr.open("GET", "http://192.168.233.146:80/push_notifikasis/", true);
+    xhr.open("GET", "https://ecoairwatchapi.000webhostapp.com/push_notifikasis/", true);
     xhr.onreadystatechange = function () {
         if (xhr.readyState == 4) {
             if (xhr.status == 200) {
@@ -41,7 +41,7 @@ let popupVisible = false;
 // Fungsi untuk mengambil data dari API
 async function fetchData() {
     try {
-        const response = await fetch('http://192.168.233.146:80/push_notifikasis');
+        const response = await fetch('https://ecoairwatchapi.000webhostapp.com/push_notifikasis');
         const data = await response.json();
         return data;
     } catch (error) {

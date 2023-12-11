@@ -12,7 +12,7 @@ function updateDataCo(value, timestamp) {
 // Fungsi untuk mengambil data dari API PM2.5
 async function fetchDataCo() {
     try {
-        const response = await fetch('http://192.168.233.146:80/karbon_monoksidas');
+        const response = await fetch('https://ecoairwatchapi.000webhostapp.com/karbon_monoksidas');
         const data = await response.json();
 
         if (data.length > 0) {
@@ -82,7 +82,7 @@ function showChartPopup3(popupId) {
         // Fungsi untuk mengambil data dari API PM2.5 untuk pop-up chart
         async function fetchDataCo() {
             try {
-                const response = await fetch('http://192.168.233.146:80/karbon_monoksidas');
+                const response = await fetch('https://ecoairwatchapi.000webhostapp.com/karbon_monoksidas');
                 const data = await response.json();
 
                 // Mengonversi label "created_at" ke format waktu 24 jam

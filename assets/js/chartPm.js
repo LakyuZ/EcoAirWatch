@@ -33,7 +33,7 @@ function updateDataPm25(value, status , timestamp) {
 
 function updateStatusIcon() {
     // Ambil data dari REST API menggunakan JavaScript Fetch API
-    fetch('http://192.168.233.146:80/partikel1s') // Endpoint REST API
+    fetch('https://ecoairwatchapi.000webhostapp.com/partikel1s') // Endpoint REST API
         .then(response => response.json())
         .then(data => {
             // Mendapatkan URL gambar ikon dari data yang diterima dari API
@@ -58,7 +58,7 @@ setInterval(updateStatusIcon, 4000);
 // Fungsi untuk mengambil data dari API PM2.5
 async function fetchDataPm2point5() {
     try {
-        const response = await fetch('http://192.168.233.146:80/partikel1s');
+        const response = await fetch('https://ecoairwatchapi.000webhostapp.com/partikel1s');
         const data = await response.json();
 
         if (data.length > 0) {
@@ -133,7 +133,7 @@ function showChartPopup(popupId) {
 // Fungsi untuk mengambil data dari API PM2.5 untuk pop-up chart
 async function fetchDataPm2point5Popup() {
     try {
-        const response = await fetch('http://192.168.233.146:80/partikel1s');
+        const response = await fetch('https://ecoairwatchapi.000webhostapp.com/partikel1s');
         const data = await response.json();
 
         // Mengambil nilai terbaru dari item.statusPartikel1

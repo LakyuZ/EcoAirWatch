@@ -36,7 +36,7 @@ function fetchDataAndPopulateTable() {
 
     // Mengambil data dari endpoint
     var xhr = new XMLHttpRequest();
-    xhr.open("GET", "http://192.168.233.146:80/push_notifikasis", true);
+    xhr.open("GET", "https://ecoairwatchapi.000webhostapp.com/push_notifikasis", true);
 
     xhr.onload = function () {
         if (xhr.status === 200) {
@@ -104,7 +104,7 @@ setInterval(fetchDataAndPopulateTable, 1000);
 function deleteData(id) {
     // Mengirim permintaan DELETE ke endpoint 192.168.0.146:80/partikel2s/delete/{id}
     var xhr = new XMLHttpRequest();
-    xhr.open("DELETE", `http://192.168.233.146:80/push_notifikasis/delete/${id}`, true);
+    xhr.open("DELETE", `https://ecoairwatchapi.000webhostapp.com/push_notifikasis/delete/${id}`, true);
 
     xhr.onload = function () {
         if (xhr.status === 200) {

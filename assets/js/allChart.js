@@ -54,7 +54,7 @@ let myChart = new Chart(ctxPm, {
 // Fungsi untuk mengambil data dari API PM10
 async function fetchDataPm2point5() {
     try {
-        const response = await fetch('http://192.168.233.146:80/partikel1s');
+        const response = await fetch('https://ecoairwatchapi.000webhostapp.com/partikel1s');
         const data = await response.json();
 
         // Mengonversi label "created_at" ke format waktu 24 jam
@@ -110,7 +110,7 @@ let coChart = new Chart(coCtx, {
 // Fungsi untuk mengambil data dari API PM10
 async function fetchDataCo() {
     try {
-        const response = await fetch('http://192.168.233.146:80/karbon_monoksidas');
+        const response = await fetch('https://ecoairwatchapi.000webhostapp.com/karbon_monoksidas');
         const data = await response.json();
 
         // Mengonversi label "created_at" ke format waktu 24 jam
@@ -166,7 +166,7 @@ let suhuChart = new Chart(suhuCtx, {
 // Fungsi untuk mengambil data dari API SUHU
 async function fetchDataSuhu() {
     try {
-        const response = await fetch('http://192.168.233.146:80/suhus');
+        const response = await fetch('https://ecoairwatchapi.000webhostapp.com/suhus');
         const data = await response.json();
 
         // Mengonversi label "created_at" ke format waktu 24 jam
@@ -221,7 +221,7 @@ let kelembabanChart = new Chart(kelembabantx, {
 // Fungsi untuk mengambil data dari API PM10
 async function fetchDataKelembaban() {
     try {
-        const response = await fetch('http://192.168.233.146:80/kelembabans');
+        const response = await fetch('https://ecoairwatchapi.000webhostapp.com/kelembabans');
         const data = await response.json();
 
         // Mengonversi label "created_at" ke format waktu 24 jam

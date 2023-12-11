@@ -11,7 +11,7 @@ function updateDataKelembaban(value, timestamp) {
 // Fungsi untuk mengambil data dari API PM2.5
 async function fetchDataKelembaban() {
     try {
-        const response = await fetch('http://192.168.233.146:80/kelembabans');
+        const response = await fetch('https://ecoairwatchapi.000webhostapp.com/kelembabans');
         const data = await response.json();
 
         if (data.length > 0) {
@@ -81,7 +81,7 @@ function showChartPopup5(popupId) {
         // Fungsi untuk mengambil data dari API PM2.5 untuk pop-up chart
         async function fetchDataKelembaban() {
             try {
-                const response = await fetch('http://192.168.233.146:80/kelembabans');
+                const response = await fetch('https://ecoairwatchapi.000webhostapp.com/kelembabans');
                 const data = await response.json();
 
                 // Mengonversi label "created_at" ke format waktu 24 jam
